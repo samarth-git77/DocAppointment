@@ -21,7 +21,7 @@ config({ path: "./config/config.env" });
 //   })
 // );
 const corsOptions = {
-  origin:  ['https://doc-appointment-two.vercel.app', 'https://doc-appointment-dashboard.vercel.app'],
+  origin:  ['https://doc-appointment-two.vercel.app', 'https://doc-appointment-dashboard.vercel.app','http://localhost:5173','http://localhost:5174'],
   credentials: true
 };
 app.use(cors(corsOptions));
