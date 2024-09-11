@@ -210,7 +210,7 @@ export const logoutAdmin = catchAsyncErrors(async (req, res, next) => {
 
 // Logout function for frontend patient
 export const logoutPatient = catchAsyncErrors(async (req, res, next) => {
-  const cookieName = user.role === 'Admin' ? 'adminToken' : 'patientToken';
+  const cookieName = req?.user?.role === 'Admin' ? 'adminToken' : 'patientToken';
 
   // Clear the cookie by setting the expiry to the current time or past
   res.cookie(cookieName, '', {
@@ -223,6 +223,6 @@ export const logoutPatient = catchAsyncErrors(async (req, res, next) => {
   
   res.status(200).json({
     success: true,
-    message: `${user.role} logged out successfully`,
+    message: `${req?.user?.role} logged out successfully`,
   });
 });
