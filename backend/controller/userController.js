@@ -210,11 +210,19 @@ export const logoutAdmin = catchAsyncErrors(async (req, res, next) => {
 
 // Logout function for frontend patient
 export const logoutPatient = catchAsyncErrors(async (req, res, next) => {
-  res.clearCookie('patientToken');
-  res
-    .status(200)  // Changed status code to 200
-    .json({
-      success: true,
-      message: "Patient Logged Out Successfully.",
-    });
+  const cookieName = user.role === 'Admin' ? 'adminToken' : 'patientToken';
+
+  // Clear the cookie by setting the expiry to the current time or past
+  res.cookie(cookieName, '', {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'None',
+    expires: new Date(0),  // Expire the cookie immediately
+    path: '/',
+  });
+  
+  res.status(200).json({
+    success: true,
+    message: `${user.role} logged out successfully`,
+  });
 });
