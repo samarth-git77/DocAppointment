@@ -197,10 +197,10 @@ export const getUserDetails = catchAsyncErrors(async (req, res, next) => {
 // Logout function for dashboard admin
 export const logoutAdmin = catchAsyncErrors(async (req, res, next) => {
   res
-    .status(201)
-    .cookie("adminToken", "", {
+    .status(200)  // Changed status code to 200
+    .clearCookie("adminToken", {
       httpOnly: true,
-      expires: new Date(Date.now()),
+      path: "/",  // Ensure path is set to root
     })
     .json({
       success: true,
@@ -211,10 +211,10 @@ export const logoutAdmin = catchAsyncErrors(async (req, res, next) => {
 // Logout function for frontend patient
 export const logoutPatient = catchAsyncErrors(async (req, res, next) => {
   res
-    .status(201)
-    .cookie("patientToken", "", {
+    .status(200)  // Changed status code to 200
+    .clearCookie("patientToken", {
       httpOnly: true,
-      expires: new Date(Date.now()),
+      path: "/",  // Ensure path is set to root
     })
     .json({
       success: true,
