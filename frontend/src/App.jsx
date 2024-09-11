@@ -12,9 +12,9 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Context } from "./main";
 import Login from "./Pages/Login";
+
 const App = () => {
-  const { isAuthenticated, setIsAuthenticated, setUser } =
-    useContext(Context);
+  const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -22,7 +22,7 @@ const App = () => {
         const response = await axios.get(
           "https://docappointment-bb8s.onrender.com/api/v1/user/patient/me",
           {
-            withCredentials: true,
+            withCredentials: true, // Send cookies with request
           }
         );
         setIsAuthenticated(true);
@@ -32,8 +32,9 @@ const App = () => {
         setUser({});
       }
     };
-    fetchUser();
-  }, [isAuthenticated]);
+
+    fetchUser(); // Fetch user when the app loads
+  }, []); // No need to re-fetch user on isAuthenticated change
 
   return (
     <>
