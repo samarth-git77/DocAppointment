@@ -8,22 +8,24 @@ import { Context } from "../main";
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
+  const navigateTo = useNavigate();
 
   const handleLogout = async () => {
-    await axios
-      .get("https://docappointment-bb8s.onrender.com/api/v1/user/patient/logout", {
-        withCredentials: true,
-      })
-      .then((res) => {
-        toast.success(res.data.message);
-        setIsAuthenticated(false);
-      })
-      .catch((err) => {
-        toast.error(err.response.data.message);
-      });
+    try {
+      const response = await axios.get(
+        "https://docappointment-bb8s.onrender.com/api/v1/user/patient/logout",
+        {
+          withCredentials: true,
+        }
+      );
+      toast.success(response.data.message);
+      setIsAuthenticated(false);
+      navigateTo('/login'); // Redirect to login after logout
+    } catch (err) {
+      console.error('Logout error:', err); // Debug log
+      toast.error(err.response?.data?.message || "An error occurred");
+    }
   };
-
-  const navigateTo = useNavigate();
 
   const goToLogin = () => {
     navigateTo("/login");
