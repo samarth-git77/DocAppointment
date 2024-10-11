@@ -9,9 +9,19 @@
 body {
   background: #3939d9f2;
 }
+
 .container {
   padding: 0 100px;
 }
+
+@media (max-width: 1600px) {
+  .logo{
+    /* width:35%; */
+    width: 30vw;
+    margin:auto;
+  }
+}
+
 @media (max-width: 700px) {
   .container {
     padding: 0 20px;
@@ -283,6 +293,7 @@ body {
   padding: 12px 0;
 }
 @media (max-width: 1376px) {
+
   .dashboard .banner:first-child .firstBox .content div,
   .dashboard .banner:first-child .firstBox .content div p {
     font-size: 26px;
@@ -378,6 +389,10 @@ body {
 }
 
 @media (max-width: 1208px) {
+    .logo {
+        /* width: 100%; */
+        width: 40vw;
+    }
   .sidebar {
     background: #3939d9f2;
     left: -100%;
@@ -563,6 +578,9 @@ body {
   .add-doctor-form form .first-wrapper div:first-child img {
     height: auto;
   }
+  .logo {
+    width: 50%;
+  }
 }
 input[type="date"]:before {
   content: attr(placeholder);
@@ -573,4 +591,11 @@ input[type="time"]:before {
   content: attr(placeholder);
   color: #444;
   margin-right: 0.5em;
+}
+
+@media (max-width: 330px) {
+  .logo {
+    width: 70vw;
+    margin: auto;
+  }
 }
