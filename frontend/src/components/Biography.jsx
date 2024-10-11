@@ -11,26 +11,14 @@ const Biography = ({imageUrl}) => {
           <p>Biography</p>
           <h3>Who We Are</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            blanditiis sequi aperiam. Debitis fugiat harum ex maxime illo
-            consequatur mollitia voluptatem omnis nihil nesciunt beatae esse
-            ipsam, sapiente totam aspernatur porro ducimus aperiam nisi. Ex
-            magnam voluptatum consectetur reprehenderit fugiat recusandae aut
-            similique illum natus velit, praesentium nostrum nesciunt. Deleniti,
-            nesciunt laboriosam totam iusto!
+          Health Hub is a comprehensive wellness center that offers a wide range of services, including fitness, nutrition, and mental health support. It aims to promote holistic well-being through personalized health plans and professional guidance. With state-of-the-art facilities and expert staff, Health Hub focuses on preventive care and sustainable lifestyle changes. Its mission is to empower individuals to lead healthier, more balanced lives.
           </p>
-          <p>We are all in 2024!</p>
-          <p>We are working on a MERN STACK PROJECT.</p>
+          
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-            assumenda exercitationem accusamus sit repellendus quo optio dolorum
-            corporis corrupti. Quas similique vel minima veniam tenetur
-            obcaecati atque magni suscipit laboriosam! Veniam vitae minus nihil
-            cupiditate natus provident. Ex illum quasi pariatur odit nisi
-            voluptas illo qui ipsum mollitia. Libero, assumenda?
+          Health Hub is dedicated to providing a one-stop solution for all aspects of health and wellness, from physical fitness to mental well-being. Offering customized programs tailored to individual needs, it emphasizes proactive health management and long-term well-being. With cutting-edge technology and a compassionate team, Health Hub supports clients in achieving their wellness goals. Its holistic approach ensures that every aspect of a person’s health is nurtured for optimal results.
           </p>
-          <p>Lorem ipsum dolor sit amet!</p>
-          <p>Coding is fun!</p>
+          <p>Health Hub is awesome!</p>
+
         </div>
       </div>
     </>
