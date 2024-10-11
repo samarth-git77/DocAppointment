@@ -56,17 +56,15 @@ const Dashboard = () => {
           <div className="firstBox">
             <img src="/doc.png" alt="docImg" />
             <div className="content">
-              <div>
-                <p>Hello ,</p>
-                <h5>
+            <div>
+                <p>Hello, <h5>
                   {admin &&
                     `${admin.firstName} ${admin.lastName}`}{" "}
-                </h5>
+                </h5></p>
+                
               </div>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Facilis, nam molestias. Eaque molestiae ipsam commodi neque.
-                Assumenda repellendus necessitatibus itaque.
+              "Welcome to Health Hub, where your well-being is our priority. Empowering you to live healthier, every day!"
               </p>
             </div>
           </div>
